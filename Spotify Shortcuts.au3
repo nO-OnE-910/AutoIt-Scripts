@@ -21,7 +21,7 @@ Func _upvote()
 EndFunc   ;==>_upvote
 
 Func _dnvote()
-	_clickOnSpotify(False)
+	_clickOnSpotify(True)
 EndFunc   ;==>_dnvote
 
 
@@ -44,3 +44,6 @@ Func _clickOnSpotify($downVote = False, $wasMinimized = False)
 	EndIf
 	ControlClick($w, "", $control, "", 1, $p[2] / 2 + $offset, $p[3] - $bottomOffset - $frameHeight)
 EndFunc   ;==>_clickOnSpotify
+
+While Sleep(1000)
+WEnd
