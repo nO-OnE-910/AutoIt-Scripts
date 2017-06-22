@@ -5,8 +5,8 @@
 ;= Settings ===============
 Global $timeout = 4000 ; After $timeout milliseconds the popup disappears.
 Global $looptime = 5 ; Sleep $looptime milliseconds between two loops.
-Global $char = "×"
-Global $info = "Did you mean × instead of x ? [Ctrl+Enter/Esc]"
+Global $char = "Ã—"
+Global $info = "Did you mean Ã— instead of x ? [Ctrl+Enter/Esc]"
 Global $tmp_replace = "$TMP_REPLACE$"
 ;= Globals ================
 Global $num_last = False
