@@ -3,8 +3,8 @@
 
 
 ;= Settings ===============
-Global $timeout = 4000 ; After $timeout milliseconds the popup disappears.
-Global $looptime = 5 ; Sleep $looptime milliseconds between two loops.
+Global $timeout = 4000  ; After $timeout milliseconds the popup disappears.
+Global $looptime = 5  ; Sleep $looptime milliseconds between two loops.
 Global $char = "×"
 Global $info = "Did you mean × instead of x ? [Ctrl+Enter/Esc]"
 Global $tmp_replace = "$TMP_REPLACE$"
@@ -23,10 +23,10 @@ Func _ex()
 EndFunc   ;==>_ex
 
 Func _pressed($i)
-	If ($i >= 0x30 And $i <= 0x39) Or ($i >= 0x60 And $i <= 0x69) Then ; 0-9
+	If ($i >= 0x30 And $i <= 0x39) Or ($i >= 0x60 And $i <= 0x69) Then  ; 0-9
 		$num_last = True
 	Else
-		If $i = 0x58 Then ; X
+		If $i = 0x58 And Not _IsPressed("11") Then  ; X without Ctrl
 			If Not $x_down And Not $showing And $num_last Then
 				$showing = True
 			ElseIf Not $x_down And $showing And Not $num_last Then
@@ -55,8 +55,14 @@ EndFunc   ;==>_pop_clip
 Func _accept()
 	_push_clip()
 
-	Send("^{a}")
-	Sleep(10)
+	Send("{end}")
+	Sleep(5)
+	Send("{lshift down}")
+	Sleep(5)
+	Send("{home}")
+	Sleep(5)
+	Send("{lshift up}")
+	Sleep(5)
 	Send("^{c}")
 	Sleep(10)
 	$s = ClipGet()
