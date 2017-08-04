@@ -1,3 +1,17 @@
+#cs ----------------------------------------------------------------------------
+
+	AutoIt Version: 3.3.14.2
+	Author:         nO OnE 910
+
+	Script Function:
+	 Provide the option to replace number-times-x with the actual unicode char
+	 for 'times' on Windows. Detects "123 x" and replaces with "123 ×".
+
+	Date:
+	 2017-06-23
+
+#ce ----------------------------------------------------------------------------
+
 #NoTrayIcon
 #include <Misc.au3>
 
